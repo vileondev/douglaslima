@@ -36,7 +36,10 @@
 }
 
 .longline{
-    width: 360px;
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    width: 1330px;
     height: 2px;
     background-color: grey;
 }
