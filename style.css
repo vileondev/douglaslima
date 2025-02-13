@@ -36,8 +36,7 @@
 }
 
 .longline{
-    align-items: center;
-    width: 1330px;
+    width: 800px;
     height: 2px;
     background-color: grey;
 }
