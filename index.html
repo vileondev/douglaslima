@@ -19,6 +19,10 @@
             </script>
         </div>
 
+        <div id="contador-view-diaria">
+            <p><span id="view-diaria">0</span> acessos hoje</p>
+        </div>
+
         <div class = "begin">
             <h2>Professor Douglas Lima</h2>
         </div>
@@ -58,5 +62,22 @@
             <img src="3.png" alt="Third Year">
         </a>
         </div>
+
+        <script>
+            function atualizarViewsDiarias(){
+                const hoje = new Date().toDateString();
+                let dadosVisita = JSON.parse(localStorage.getItem('dadosVisita')) || {};
+
+                if (!dadosVisita[hoje]) {
+                    dadosVisita[hoje] = 0;
+                }
+                dadosVisita[hoje]++;
+                localStorage.setItem('dadosvisita', JSON.stringify(dadosVisita));
+
+                document.getElementById('view-diaria').innerText = dadosVisita[hoje];
+            }
+
+            window.onload = atualizarViewsDiarias();
+        </script>
     </body>
 </html>
